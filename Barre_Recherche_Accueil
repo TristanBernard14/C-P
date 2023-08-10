@@ -67,7 +67,7 @@
         <ul id="resultList">
             <li class="entreprise">
                 <span class="label">Entreprise</span>
-                <a href="http://LaFeuille.local/?page_id=10">L'Oréal</a>
+                <a href="http://LaFeuille.local/loreal)">L'Oréal</a>
             </li>
             <!-- Ajoutez d'autres éléments de liste ici si nécessaire -->
         </ul>
