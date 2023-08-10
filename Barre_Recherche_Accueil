@@ -64,21 +64,6 @@
             margin-right: 8px;
         }
     </style>
-</head>
-<body>
-    <!-- Section de recherche personnalisée -->
-    <div id="custom-search-section">
-        <input type="text" id="searchbar" onkeyup="search_items()" placeholder="Rechercher une Entreprise ou une Marque...">
-           <ul id="resultList">
-            <a href="http://LaFeuille.local/loreal)">
-                <li class="entreprise">
-                    <span class="label">Entreprise</span>
-                    L'Oréal
-                </li>
-            </a>
-            <!-- Ajoutez d'autres éléments de liste ici si nécessaire -->
-        </ul>
-    </div>
     <script>
         function search_items() {
             let input = document.getElementById('searchbar').value;
@@ -111,5 +96,20 @@
             lorealText.textContent = "L'Oréal";
         }
     </script>
+</head>
+<body>
+    <!-- Section de recherche personnalisée -->
+    <div id="custom-search-section">
+        <input type="text" id="searchbar" onkeyup="search_items()" placeholder="Rechercher une Entreprise ou une Marque...">
+           <ul id="resultList">
+            <a href="http://LaFeuille.local/loreal)">
+                <li class="entreprise">
+                    <span class="label">Entreprise</span>
+                    L'Oréal
+                </li>
+            </a>
+            <!-- Ajoutez d'autres éléments de liste ici si nécessaire -->
+        </ul>
+    </div>
 </body>
 </html>
