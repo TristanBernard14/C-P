@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Styles spécifiques à la section de recherche personnalisée */
+        #custom-search-section #searchbar {
+            padding: 10px;
+            border: none;
+            border-bottom: 2px solid #555;
+            width: 100%;
+            font-size: 16px;
+            background-color: transparent;
+            color: #333;
+            transition: border-bottom-color 0.3s ease-in-out;
+            margin-bottom: 20px;
+        }
+
+        #custom-search-section #searchbar::placeholder {
+            color: #999;
+        }
+
+        /* Styles pour la liste d'éléments filtrés */
+        #custom-search-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #custom-search-section li {
+            display: none;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            background-color: #f5f5f5;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.2s ease-in-out;
+            position: relative;
+        }
+
+        #custom-search-section li.active {
+            display: block;
+            background-color: white;
+            color: black;
+            border-color: #ccc;
+        }
+        
+        #custom-search-section li a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
+        #custom-search-section .label {
+            display: inline-block;
+            padding: 4px 8px;
+            background-color: rgba(0, 0, 0, 0.1);
+            font-size: 12px;
+            border-radius: 4px;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Section de recherche personnalisée -->
+    <div id="custom-search-section">
+        <input type="text" id="searchbar" onkeyup="search_items()" placeholder="Rechercher une Entreprise ou une Marque...">
+        <ul id="resultList">
+            <li class="entreprise">
+                <span class="label">Entreprise</span>
+                <a href="http://LaFeuille.local/?page_id=10">L'Oréal</a>
+            </li>
+            <!-- Ajoutez d'autres éléments de liste ici si nécessaire -->
+        </ul>
+    </div>
+<script>
+        function search_items() {
+            let input = document.getElementById('searchbar').value;
+            input = input.toLowerCase();
+            let x = document.getElementsByClassName('entreprise');
+    
+            let count = 0; // Compteur pour le nombre d'éléments affichés
+    
+            if (input === '') {
+                for (let i = 0; i < x.length; i++) {
+                    x[i].classList.remove('active');
+                }
+            } else {
+                for (let i = 0; i < x.length; i++) {
+                    if (count >= 5) { // Limite le nombre d'éléments affichés à 5
+                        x[i].classList.remove('active');
+                    } else {
+                        if (!x[i].innerHTML.toLowerCase().includes(input)) {
+                            x[i].classList.remove('active');
+                        } else {
+                            x[i].classList.add('active');
+                            count++;
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
+
