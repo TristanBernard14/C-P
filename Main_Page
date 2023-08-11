@@ -1,0 +1,257 @@
+<!-- wp:kadence/rowlayout {"uniqueID":"207_5aa6cf-3d","columns":1,"collapseGutter":"none","customRowGutter":[0,"",""],"columnGutter":"none","customGutter":[0,"",""],"colLayout":"row","currentOverlayTab":"gradient","bgImg":"http://LaFeuille.local/wp-content/uploads/2023/08/Example-A-Roll-Image-scaled-1.jpg","overlay":"palette3","overlayFirstOpacity":1,"overlayOpacity":100,"align":"full","minHeightUnit":"vh","overlayGradient":"linear-gradient(180deg,var(\u002d\u002dglobal-palette9,#ffffff) 0%,rgba(255,255,255,0) 100%)","padding":["0","0","0","0"],"kbVersion":2} -->
+<!-- wp:kadence/column {"borderWidth":["","","",""],"uniqueID":"207_21199a-e4","verticalAlignment":"","height":[30,"",""],"heightUnit":"vh","padding":["","","",""],"borderStyle":[{"top":["","",""],"right":["","",""],"bottom":["","",""],"left":["","",""],"unit":"px"}]} -->
+<div class="wp-block-kadence-column kadence-column207_21199a-e4"><div class="kt-inside-inner-col"><!-- wp:kadence/rowlayout {"uniqueID":"207_30941a-4d","columns":1,"collapseGutter":"none","customRowGutter":[0,"",""],"columnGutter":"none","customGutter":[0,"",""],"colLayout":"equal","bgImg":"http://LaFeuille.local/wp-content/uploads/2023/08/laura-lefurgey-smith-pV69pG9YeEw-unsplash-1-scaled.jpg","bgImgPosition":"50% 0%","overlay":"palette9","overlayFirstOpacity":1,"overlayOpacity":70,"align":"full","minHeightUnit":"vh","inheritMaxWidth":true,"overlayGradient":"linear-gradient(180deg,var(\u002d\u002dglobal-palette9,#ffffff) 0%,rgba(255,255,255,0) 100%)","padding":["xl","","xxl",""],"kbVersion":2} -->
+<!-- wp:kadence/column {"borderWidth":["","","",""],"uniqueID":"207_937d85-f8","textAlign":["center","",""],"direction":["vertical","",""],"gutter":[20,"",""],"maxWidth":[380,"",""],"borderStyle":[{"top":["","",""],"right":["","",""],"bottom":["","",""],"left":["","",""],"unit":"px"}]} -->
+<div class="wp-block-kadence-column kadence-column207_937d85-f8 kb-section-dir-vertical"><div class="kt-inside-inner-col"><!-- wp:paragraph -->
+<p>Face aux défis environnementaux, les entreprises adoptent à leur rythme des solutions pour limiter leur impact sur notre planète.<br>En consommant des produits avec un faible impact environnementale, en plus de préserver la planète, vous inciterez les entreprises à prendre d’avantages de mesures responsables.</p>
+<!-- /wp:paragraph --></div></div>
+<!-- /wp:kadence/column -->
+
+<!-- wp:kadence/column {"id":2,"borderWidth":["","","",""],"uniqueID":"207_3b44cf-60","direction":["vertical","",""],"verticalAlignment":"top","height":[50,"",""],"heightUnit":"vh","padding":["md","","",""],"borderStyle":[{"top":["","",""],"right":["","",""],"bottom":["","",""],"left":["","",""],"unit":"px"}]} -->
+<div class="wp-block-kadence-column kadence-column207_3b44cf-60 kb-section-dir-vertical"><div class="kt-inside-inner-col"><!-- wp:html -->
+<!DOCTYPE html>
+<html>
+<head>
+        <style>
+        /* Styles spécifiques à la section de recherche personnalisée */
+        #custom-search-section #searchbar {
+            padding: 10px;
+            border: none;
+            border-bottom: 2px solid #555;
+            width: 100%;
+            font-size: 16px;
+            background-color: transparent;
+            color: #333;
+            transition: border-bottom-color 0.3s ease-in-out;
+            margin-bottom: 20px;
+        }
+
+        #custom-search-section #searchbar::placeholder {
+            color: #999;
+        }
+
+        /* Styles pour la liste d'éléments filtrés */
+        #custom-search-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #custom-search-section li {
+            display: none;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            background-color: #f5f5f5;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.2s ease-in-out;
+            position: relative;
+        }
+
+        #custom-search-section li.active {
+            display: block;
+            background-color: white;
+            color: black;
+            border-color: #ccc;
+        }
+        
+        #custom-search-section li a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
+        #custom-search-section li a:hover,
+        #custom-search-section li a:visited {
+            background-color: #f5f5f5; /* Retirer le surlignement */
+        }
+
+        #custom-search-section .label {
+            display: inline-block;
+            padding: 4px 8px;
+            background-color: rgba(0, 0, 0, 0.1);
+            font-size: 12px;
+            border-radius: 4px;
+            margin-right: 8px;
+        }
+    </style>
+    <script>
+        function search_items() {
+            let input = document.getElementById('searchbar').value;
+            input = input.toLowerCase();
+            let x = document.getElementsByClassName('entreprise');
+    
+            let count = 0; // Compteur pour le nombre d'éléments affichés
+    
+            if (input === '') {
+                for (let i = 0; i < x.length; i++) {
+                    x[i].classList.remove('active');
+                }
+            } else {
+                for (let i = 0; i < x.length; i++) {
+                    if (count >= 4) { // Limite le nombre d'éléments affichés à 5
+                        x[i].classList.remove('active');
+                    } else {
+                        if (!x[i].textContent.toLowerCase().includes(input)) {
+                            x[i].classList.remove('active');
+                        } else {
+                            x[i].classList.add('active');
+                            count++;
+                        }
+                    }
+                }
+            }
+
+            // Mettre à jour le contenu du span avec l'apostrophe
+            let lorealText = document.getElementById('lorealText');
+            lorealText.textContent = "L'Oréal";
+        }
+    </script>
+</head>
+<body>
+    <!-- Section de recherche personnalisée -->
+    <div id="custom-search-section">
+        <input type="text" id="searchbar" onkeyup="search_items()" placeholder="Rechercher une Entreprise ou une Marque...">
+           <ul id="resultList">
+            <a href="http://LaFeuille.local/loreal)">
+                <li class="entreprise">
+                    <span class="label">Entreprise</span>
+                    L'Oréal
+                </li>
+            </a>
+            <!-- Ajoutez d'autres éléments de liste ici si nécessaire -->
+        </ul>
+    </div>
+</body>
+</html>
+<!-- /wp:html -->
+
+<!-- wp:kadence/advancedheading {"uniqueID":"207_fd9785-7e","markBorder":"","markBorderStyles":[{"top":[null,"",""],"right":[null,"",""],"bottom":[null,"",""],"left":[null,"",""],"unit":"px"}],"tabletMarkBorderStyles":[{"top":[null,"",""],"right":[null,"",""],"bottom":[null,"",""],"left":[null,"",""],"unit":"px"}],"mobileMarkBorderStyles":[{"top":[null,"",""],"right":[null,"",""],"bottom":[null,"",""],"left":[null,"",""],"unit":"px"}]} -->
+<h2 class="kt-adv-heading207_fd9785-7e wp-block-kadence-advancedheading" data-kb-block="kb-adv-heading207_fd9785-7e"></h2>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/advancedheading {"uniqueID":"207_bce458-d1","markBorder":"","markBorderStyles":[{"top":[null,"",""],"right":[null,"",""],"bottom":[null,"",""],"left":[null,"",""],"unit":"px"}],"tabletMarkBorderStyles":[{"top":[null,"",""],"right":[null,"",""],"bottom":[null,"",""],"left":[null,"",""],"unit":"px"}],"mobileMarkBorderStyles":[{"top":[null,"",""],"right":[null,"",""],"bottom":[null,"",""],"left":[null,"",""],"unit":"px"}]} -->
+<h2 class="kt-adv-heading207_bce458-d1 wp-block-kadence-advancedheading" data-kb-block="kb-adv-heading207_bce458-d1"></h2>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:kadence/advancedheading {"uniqueID":"207_45488b-5e","align":"center","color":"palette3","margin":["xxl","","0",""],"padding":["0","","0",""],"markBorder":"","markBorderStyles":[{"top":[null,"",""],"right":[null,"",""],"bottom":[null,"",""],"left":[null,"",""],"unit":"px"}],"tabletMarkBorderStyles":[{"top":[null,"",""],"right":[null,"",""],"bottom":[null,"",""],"left":[null,"",""],"unit":"px"}],"mobileMarkBorderStyles":[{"top":[null,"",""],"right":[null,"",""],"bottom":[null,"",""],"left":[null,"",""],"unit":"px"}],"colorClass":"theme-palette3","fontSize":["xl","",""],"fontHeight":[1,"",""],"maxWidth":[993,"",""]} -->
+<h2 class="kt-adv-heading207_45488b-5e wp-block-kadence-advancedheading has-theme-palette-3-color has-text-color" data-kb-block="kb-adv-heading207_45488b-5e">Une consommation éclairée pour un avenir préservé</h2>
+<!-- /wp:kadence/advancedheading --></div></div>
+<!-- /wp:kadence/column -->
+<!-- /wp:kadence/rowlayout --></div></div>
+<!-- /wp:kadence/column -->
+<!-- /wp:kadence/rowlayout -->
+
+<!-- wp:kadence/rowlayout {"uniqueID":"207_47fd82-98","tabletLayout":"row","tabletRowGutter":"wider","customRowGutter":[30,60,""],"columnGutter":"wider","customGutter":[64,"",""],"colLayout":"row","bgColor":"palette8","align":"full","textColor":"palette3","linkColor":"palette4","linkHoverColor":"palette5","inheritMaxWidth":true,"bgColorClass":"theme-palette8","padding":["xl","","xxl",""],"kbVersion":2} -->
+<!-- wp:kadence/column {"borderWidth":["","","",""],"uniqueID":"207_6d5915-f6","verticalAlignment":"top","padding":["","lg","",""],"borderStyle":[{"top":["","",""],"right":["","",""],"bottom":["","",""],"left":["","",""],"unit":"px"}]} -->
+<div class="wp-block-kadence-column kadence-column207_6d5915-f6"><div class="kt-inside-inner-col"><!-- wp:kadence/rowlayout {"uniqueID":"207_658751-54","customGutter":[32,"",""],"colLayout":"equal","firstColumnWidth":10,"secondColumnWidth":90,"padding":["","","",""],"mobilePadding":["","","xs",""],"kbVersion":2} -->
+<!-- wp:kadence/column {"borderWidth":["","","",""],"uniqueID":"207_cc532b-0f","vsmobile":true,"rowGap":[0,"",""],"verticalAlignment":"middle","height":[3,"",""],"padding":["0","","",""],"borderStyle":[{"top":["","",""],"right":["","",""],"bottom":["","",""],"left":["","",""],"unit":"px"}]} -->
+<div class="wp-block-kadence-column kadence-column207_cc532b-0f kvs-sm-false"><div class="kt-inside-inner-col"><!-- wp:kadence/spacer {"spacerHeight":52,"dividerColor":"palette2","dividerWidth":100,"dividerHeight":3,"uniqueID":"207_31f63b-a3"} -->
+<div class="wp-block-kadence-spacer aligncenter kt-block-spacer-207_31f63b-a3"><div class="kt-block-spacer kt-block-spacer-halign-center"><hr class="kt-divider"/></div></div>
+<!-- /wp:kadence/spacer --></div></div>
+<!-- /wp:kadence/column -->
+
+<!-- wp:kadence/column {"id":2,"borderWidth":["","","",""],"uniqueID":"207_3733f4-7b","direction":["vertical","",""],"borderStyle":[{"top":["","",""],"right":["","",""],"bottom":["","",""],"left":["","",""],"unit":"px"}]} -->
+<div class="wp-block-kadence-column kadence-column207_3733f4-7b kb-section-dir-vertical"><div class="kt-inside-inner-col"><!-- wp:kadence/advancedheading {"uniqueID":"207_b24483-08","align":"center","padding":["","","0",""],"markBorder":"","markBorderStyles":[{"top":[null,"",""],"right":[null,"",""],"bottom":[null,"",""],"left":[null,"",""],"unit":"px"}],"tabletMarkBorderStyles":[{"top":[null,"",""],"right":[null,"",""],"bottom":[null,"",""],"left":[null,"",""],"unit":"px"}],"mobileMarkBorderStyles":[{"top":[null,"",""],"right":[null,"",""],"bottom":[null,"",""],"left":[null,"",""],"unit":"px"}],"fontSize":["lg","",""],"maxWidth":[1039,"",""]} -->
+<h2 class="kt-adv-heading207_b24483-08 wp-block-kadence-advancedheading" data-kb-block="kb-adv-heading207_b24483-08"><strong>Recherche sur un secteur</strong></h2>
+<!-- /wp:kadence/advancedheading --></div></div>
+<!-- /wp:kadence/column -->
+<!-- /wp:kadence/rowlayout --></div></div>
+<!-- /wp:kadence/column -->
+
+<!-- wp:kadence/column {"id":2,"borderWidth":["","","",""],"uniqueID":"207_fd8a80-63","borderStyle":[{"top":["","",""],"right":["","",""],"bottom":["","",""],"left":["","",""],"unit":"px"}]} -->
+<div class="wp-block-kadence-column kadence-column207_fd8a80-63"><div class="kt-inside-inner-col"><!-- wp:kadence/rowlayout {"uniqueID":"207_4fa669-9c","columns":4,"tabletRowGutter":"default","mobileRowGutter":"default","customRowGutter":[30,30,30],"tabletGutter":"skinny","customGutter":[32,16,""],"colLayout":"equal","textColor":"palette3","linkColor":"palette4","linkHoverColor":"palette5","columnsUnlocked":true,"padding":["","","sm",""],"kbVersion":2} -->
+<!-- wp:kadence/column {"borderWidth":["","","",""],"uniqueID":"207_655015-5a","borderStyle":[{"top":["","",""],"right":["","",""],"bottom":["","",""],"left":["","",""],"unit":"px"}]} -->
+<div class="wp-block-kadence-column kadence-column207_655015-5a"><div class="kt-inside-inner-col"><!-- wp:kadence/infobox {"uniqueID":"207_fc82f0-84","containerBackground":"palette8","containerPadding":["xs","xs","xs","xs"],"mediaType":"image","mediaImage":[{"url":"http://LaFeuille.local/wp-content/uploads/2023/08/9078539_plate_food_icon-300x300.png","id":323,"alt":"","width":300,"height":300,"maxWidth":100,"hoverAnimation":"none","flipUrl":"","flipId":"","flipAlt":"","flipWidth":"","flipHeight":"","subtype":"png","flipSubtype":""}],"mediaIcon":[{"icon":"fe_aperture","size":50,"width":2,"title":"","color":"palette3","hoverColor":"palette5","hoverAnimation":"none","flipIcon":""}],"mediaStyle":[{"background":"var(\u002d\u002dglobal-palette7, #eeeeee)","hoverBackground":"","border":"var(u002du002dglobal-palette7, #eeeeee)","hoverBorder":"rgba(68,68,68,0)","borderRadius":200,"borderWidth":[0,0,0,0],"padding":[20,20,20,20],"margin":[0,15,10,15]}],"titleColor":"palette3","titleHoverColor":"palette3","titleFont":[{"level":2,"size":["","",""],"sizeType":"px","lineHeight":["","",""],"lineType":"px","letterSpacing":"","textTransform":"","family":"","google":false,"style":"","weight":"","variant":"","subset":"","loadGoogle":true,"padding":[0,0,0,0],"paddingControl":"linked","margin":[5,0,10,0],"marginControl":"individual"}],"textColor":"palette3","textHoverColor":"palette3","mediaVAlign":"top","containerMargin":["","","",""],"tabletContainerMargin":["","","",""],"mobileContainerMargin":["","","",""],"borderStyle":[{"top":["var(\u002d\u002dglobal-palette7, #eeeeee)","",5],"right":["var(\u002d\u002dglobal-palette7, #eeeeee)","",5],"bottom":["var(\u002d\u002dglobal-palette7, #eeeeee)","",5],"left":["var(\u002d\u002dglobal-palette7, #eeeeee)","",5],"unit":"px"}],"borderRadius":[30,30,30,30],"kbVersion":2} -->
+<div class="wp-block-kadence-infobox kt-info-box207_fc82f0-84"><a class="kt-blocks-info-box-link-wrap info-box-link kt-blocks-info-box-media-align-top kt-info-halign-center kb-info-box-vertical-media-align-top" href="http://LaFeuille.local/agroalimentaire/"><div class="kt-blocks-info-box-media-container"><div class="kt-blocks-info-box-media kt-info-media-animate-none"><div class="kadence-info-box-image-inner-intrisic-container"><div class="kadence-info-box-image-intrisic kt-info-animate-none"><div class="kadence-info-box-image-inner-intrisic"><img src="http://LaFeuille.local/wp-content/uploads/2023/08/9078539_plate_food_icon-300x300.png" alt="" width="300" height="300" class="kt-info-box-image wp-image-323"/></div></div></div></div></div><div class="kt-infobox-textcontent"><h2 class="kt-blocks-info-box-title"><strong>Aliments et Boissons</strong></h2><p class="kt-blocks-info-box-text">Use this space to add a medium length description. Be brief and give enough information to earn their attention.</p></div></a></div>
+<!-- /wp:kadence/infobox --></div></div>
+<!-- /wp:kadence/column -->
+
+<!-- wp:kadence/column {"id":2,"borderWidth":["","","",""],"uniqueID":"207_c8e528-75","borderStyle":[{"top":["","",""],"right":["","",""],"bottom":["","",""],"left":["","",""],"unit":"px"}]} -->
+<div class="wp-block-kadence-column kadence-column207_c8e528-75"><div class="kt-inside-inner-col"><!-- wp:kadence/infobox {"uniqueID":"207_310c43-2c","containerBackground":"palette8","containerPadding":["xs","xs","xs","xs"],"mediaType":"image","mediaImage":[{"url":"http://LaFeuille.local/wp-content/uploads/2023/08/751115_beauty_saloon_cosmetic_hair_makeup_icon.png","id":318,"alt":"","width":512,"height":512,"maxWidth":100,"hoverAnimation":"none","flipUrl":"","flipId":"","flipAlt":"","flipWidth":"","flipHeight":"","subtype":"png","flipSubtype":""}],"mediaIcon":[{"icon":"fe_aperture","size":50,"width":2,"title":"","color":"palette3","hoverColor":"palette5","hoverAnimation":"none","flipIcon":""}],"mediaStyle":[{"background":"var(\u002d\u002dglobal-palette7, #eeeeee)","hoverBackground":"","border":"var(u002du002dglobal-palette7, #eeeeee)","hoverBorder":"rgba(68,68,68,0)","borderRadius":200,"borderWidth":[0,0,0,0],"padding":[20,20,20,20],"margin":[0,15,10,15]}],"titleColor":"palette3","titleHoverColor":"palette3","titleFont":[{"level":2,"size":["","",""],"sizeType":"px","lineHeight":["","",""],"lineType":"px","letterSpacing":"","textTransform":"","family":"","google":false,"style":"","weight":"","variant":"","subset":"","loadGoogle":true,"padding":[0,0,0,0],"paddingControl":"linked","margin":[5,0,10,0],"marginControl":"individual"}],"textColor":"palette3","textHoverColor":"palette3","mediaVAlign":"top","containerMargin":["","","",""],"tabletContainerMargin":["","","",""],"mobileContainerMargin":["","","",""],"borderStyle":[{"top":["var(\u002d\u002dglobal-palette7, #eeeeee)","",5],"right":["var(\u002d\u002dglobal-palette7, #eeeeee)","",5],"bottom":["var(\u002d\u002dglobal-palette7, #eeeeee)","",5],"left":["var(\u002d\u002dglobal-palette7, #eeeeee)","",5],"unit":"px"}],"borderRadius":[30,30,30,30],"kbVersion":2} -->
+<div class="wp-block-kadence-infobox kt-info-box207_310c43-2c"><a class="kt-blocks-info-box-link-wrap info-box-link kt-blocks-info-box-media-align-top kt-info-halign-center kb-info-box-vertical-media-align-top" href="http://LaFeuille.local/beaute-et-cosmetique/"><div class="kt-blocks-info-box-media-container"><div class="kt-blocks-info-box-media kt-info-media-animate-none"><div class="kadence-info-box-image-inner-intrisic-container"><div class="kadence-info-box-image-intrisic kt-info-animate-none"><div class="kadence-info-box-image-inner-intrisic"><img src="http://LaFeuille.local/wp-content/uploads/2023/08/751115_beauty_saloon_cosmetic_hair_makeup_icon.png" alt="" width="512" height="512" class="kt-info-box-image wp-image-318"/></div></div></div></div></div><div class="kt-infobox-textcontent"><h2 class="kt-blocks-info-box-title"><strong>Cosmétique</strong></h2><p class="kt-blocks-info-box-text">Use this space to add a medium length description. Be brief and give enough information to earn their attention.</p></div></a></div>
+<!-- /wp:kadence/infobox --></div></div>
+<!-- /wp:kadence/column -->
+
+<!-- wp:kadence/column {"id":3,"borderWidth":["","","",""],"uniqueID":"207_9fdb23-42","borderStyle":[{"top":["","",""],"right":["","",""],"bottom":["","",""],"left":["","",""],"unit":"px"}]} -->
+<div class="wp-block-kadence-column kadence-column207_9fdb23-42"><div class="kt-inside-inner-col"><!-- wp:kadence/infobox {"uniqueID":"207_822bb2-1b","containerBackground":"palette8","containerPadding":["xs","xs","xs","xs"],"mediaType":"image","mediaImage":[{"url":"http://LaFeuille.local/wp-content/uploads/2023/08/6619543_and_ecommerce_hanger_shopping_icon.png","id":314,"alt":"","width":512,"height":512,"maxWidth":100,"hoverAnimation":"none","flipUrl":"","flipId":"","flipAlt":"","flipWidth":"","flipHeight":"","subtype":"png","flipSubtype":""}],"mediaIcon":[{"icon":"fe_arrowRightCircle","size":50,"width":2,"title":"","color":"palette3","hoverColor":"palette5","hoverAnimation":"none","flipIcon":""}],"mediaStyle":[{"background":"var(\u002d\u002dglobal-palette7, #eeeeee)","hoverBackground":"","border":"var(u002du002dglobal-palette7, #eeeeee)","hoverBorder":"rgba(68,68,68,0)","borderRadius":200,"borderWidth":[0,0,0,0],"padding":[20,20,20,20],"margin":[0,15,10,15]}],"titleColor":"palette3","titleHoverColor":"palette3","titleFont":[{"level":2,"size":["","",""],"sizeType":"px","lineHeight":["","",""],"lineType":"px","letterSpacing":"","textTransform":"","family":"","google":false,"style":"","weight":"","variant":"","subset":"","loadGoogle":true,"padding":[0,0,0,0],"paddingControl":"linked","margin":[5,0,10,0],"marginControl":"individual"}],"textColor":"palette3","textHoverColor":"palette3","mediaVAlign":"top","containerMargin":["","","",""],"tabletContainerMargin":["","","",""],"mobileContainerMargin":["","","",""],"borderStyle":[{"top":["var(\u002d\u002dglobal-palette7, #eeeeee)","",5],"right":["var(\u002d\u002dglobal-palette7, #eeeeee)","",5],"bottom":["var(\u002d\u002dglobal-palette7, #eeeeee)","",5],"left":["var(\u002d\u002dglobal-palette7, #eeeeee)","",5],"unit":"px"}],"borderRadius":[30,30,30,30],"kbVersion":2} -->
+<div class="wp-block-kadence-infobox kt-info-box207_822bb2-1b"><a class="kt-blocks-info-box-link-wrap info-box-link kt-blocks-info-box-media-align-top kt-info-halign-center kb-info-box-vertical-media-align-top" href="http://LaFeuille.local/mode/"><div class="kt-blocks-info-box-media-container"><div class="kt-blocks-info-box-media kt-info-media-animate-none"><div class="kadence-info-box-image-inner-intrisic-container"><div class="kadence-info-box-image-intrisic kt-info-animate-none"><div class="kadence-info-box-image-inner-intrisic"><img src="http://LaFeuille.local/wp-content/uploads/2023/08/6619543_and_ecommerce_hanger_shopping_icon.png" alt="" width="512" height="512" class="kt-info-box-image wp-image-314"/></div></div></div></div></div><div class="kt-infobox-textcontent"><h2 class="kt-blocks-info-box-title"><strong>Mode</strong></h2><p class="kt-blocks-info-box-text">Use this space to add a medium length description. Be brief and give enough information to earn their attention.</p></div></a></div>
+<!-- /wp:kadence/infobox --></div></div>
+<!-- /wp:kadence/column -->
+
+<!-- wp:kadence/column {"id":4,"borderWidth":["","","",""],"uniqueID":"207_3ae7cc-80","borderStyle":[{"top":["","",""],"right":["","",""],"bottom":["","",""],"left":["","",""],"unit":"px"}]} -->
+<div class="wp-block-kadence-column kadence-column207_3ae7cc-80"><div class="kt-inside-inner-col"><!-- wp:kadence/infobox {"uniqueID":"207_64c0ca-ea","containerBackground":"palette8","containerPadding":["xs","xs","xs","xs"],"mediaType":"image","mediaImage":[{"url":"http://LaFeuille.local/wp-content/uploads/2023/08/7218137_internet_communication_network_technology_connection_icon.png","id":317,"alt":"","width":512,"height":512,"maxWidth":100,"hoverAnimation":"none","flipUrl":"","flipId":"","flipAlt":"","flipWidth":"","flipHeight":"","subtype":"png","flipSubtype":""}],"mediaIcon":[{"icon":"fe_aperture","size":50,"width":2,"title":"","color":"palette3","hoverColor":"palette5","hoverAnimation":"none","flipIcon":""}],"mediaStyle":[{"background":"var(\u002d\u002dglobal-palette7, #eeeeee)","hoverBackground":"","border":"var(u002du002dglobal-palette7, #eeeeee)","hoverBorder":"rgba(68,68,68,0)","borderRadius":200,"borderWidth":[0,0,0,0],"padding":[20,20,20,20],"margin":[0,15,10,15]}],"titleColor":"palette3","titleHoverColor":"palette3","titleFont":[{"level":2,"size":["","",""],"sizeType":"px","lineHeight":["","",""],"lineType":"px","letterSpacing":"","textTransform":"","family":"","google":false,"style":"","weight":"","variant":"","subset":"","loadGoogle":true,"padding":[0,0,0,0],"paddingControl":"linked","margin":[5,0,10,0],"marginControl":"individual"}],"textColor":"palette3","textHoverColor":"palette3","mediaVAlign":"top","maxWidth":859,"containerMargin":["0","","",""],"tabletContainerMargin":["","","",""],"mobileContainerMargin":["","","",""],"borderStyle":[{"top":["var(\u002d\u002dglobal-palette7, #eeeeee)","",5],"right":["var(\u002d\u002dglobal-palette7, #eeeeee)","",5],"bottom":["var(\u002d\u002dglobal-palette7, #eeeeee)","",5],"left":["var(\u002d\u002dglobal-palette7, #eeeeee)","",5],"unit":"px"}],"borderRadius":[30,30,30,30],"kbVersion":2} -->
+<div class="wp-block-kadence-infobox kt-info-box207_64c0ca-ea"><a class="kt-blocks-info-box-link-wrap info-box-link kt-blocks-info-box-media-align-top kt-info-halign-center kb-info-box-vertical-media-align-top" href="http://LaFeuille.local/technologie-2/"><div class="kt-blocks-info-box-media-container"><div class="kt-blocks-info-box-media kt-info-media-animate-none"><div class="kadence-info-box-image-inner-intrisic-container"><div class="kadence-info-box-image-intrisic kt-info-animate-none"><div class="kadence-info-box-image-inner-intrisic"><img src="http://LaFeuille.local/wp-content/uploads/2023/08/7218137_internet_communication_network_technology_connection_icon.png" alt="" width="512" height="512" class="kt-info-box-image wp-image-317"/></div></div></div></div></div><div class="kt-infobox-textcontent"><h2 class="kt-blocks-info-box-title"><strong>Technologie</strong></h2><p class="kt-blocks-info-box-text">Use this space to add a medium length description. Be brief and give enough information to earn their attention.</p></div></a></div>
+<!-- /wp:kadence/infobox --></div></div>
+<!-- /wp:kadence/column -->
+<!-- /wp:kadence/rowlayout --></div></div>
+<!-- /wp:kadence/column -->
+<!-- /wp:kadence/rowlayout -->
+
+<!-- wp:kadence/rowlayout {"uniqueID":"207_b898dc-ec","tabletLayout":"row","tabletRowGutter":"wider","customRowGutter":[30,60,""],"columnGutter":"wider","customGutter":[64,"",""],"colLayout":"equal","bgColor":"palette3","align":"full","textColor":"palette9","linkColor":"palette8","linkHoverColor":"palette7","inheritMaxWidth":true,"bgColorClass":"theme-palette3","padding":["3xl","","3xl",""],"kbVersion":2} -->
+<!-- wp:kadence/column {"borderWidth":["","","",""],"uniqueID":"207_0f8798-77","padding":["","lg","",""],"borderStyle":[{"top":["","",""],"right":["","",""],"bottom":["","",""],"left":["","",""],"unit":"px"}]} -->
+<div class="wp-block-kadence-column kadence-column207_0f8798-77"><div class="kt-inside-inner-col"><!-- wp:kadence/advancedheading {"uniqueID":"207_f951ac-18","margin":["0","","",""],"markBorder":"","markBorderStyles":[{"top":[null,"",""],"right":[null,"",""],"bottom":[null,"",""],"left":[null,"",""],"unit":"px"}],"tabletMarkBorderStyles":[{"top":[null,"",""],"right":[null,"",""],"bottom":[null,"",""],"left":[null,"",""],"unit":"px"}],"mobileMarkBorderStyles":[{"top":[null,"",""],"right":[null,"",""],"bottom":[null,"",""],"left":[null,"",""],"unit":"px"}],"fontSize":["lg","md","md"],"fontHeight":[1.2,"",""]} -->
+<h2 class="kt-adv-heading207_f951ac-18 wp-block-kadence-advancedheading" data-kb-block="kb-adv-heading207_f951ac-18">Présentation du Site</h2>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/advancedheading {"uniqueID":"207_32d7c2-69","markBorder":"","markBorderStyles":[{"top":[null,"",""],"right":[null,"",""],"bottom":[null,"",""],"left":[null,"",""],"unit":"px"}],"tabletMarkBorderStyles":[{"top":[null,"",""],"right":[null,"",""],"bottom":[null,"",""],"left":[null,"",""],"unit":"px"}],"mobileMarkBorderStyles":[{"top":[null,"",""],"right":[null,"",""],"bottom":[null,"",""],"left":[null,"",""],"unit":"px"}]} -->
+<h2 class="kt-adv-heading207_32d7c2-69 wp-block-kadence-advancedheading" data-kb-block="kb-adv-heading207_32d7c2-69">Blabablablablablablabalbalablablablabalbalblablablablablabalbalablabalblablablablabalablabalblblablabalblbalbalbalbalabalablbalbalblbalbalbalbalbalablblabalbabalbalablbalablablablablbalablbalbalbalb</h2>
+<!-- /wp:kadence/advancedheading --></div></div>
+<!-- /wp:kadence/column -->
+
+<!-- wp:kadence/column {"id":2,"borderWidth":["","","",""],"uniqueID":"207_4a8a73-c8","textColor":"palette9","borderStyle":[{"top":["","",""],"right":["","",""],"bottom":["","",""],"left":["","",""],"unit":"px"}]} -->
+<div class="wp-block-kadence-column kadence-column207_4a8a73-c8"><div class="kt-inside-inner-col"><!-- wp:kadence/advancedheading {"uniqueID":"207_1780ac-e7","markBorder":"","markBorderStyles":[{"top":[null,"",""],"right":[null,"",""],"bottom":[null,"",""],"left":[null,"",""],"unit":"px"}],"tabletMarkBorderStyles":[{"top":[null,"",""],"right":[null,"",""],"bottom":[null,"",""],"left":[null,"",""],"unit":"px"}],"mobileMarkBorderStyles":[{"top":[null,"",""],"right":[null,"",""],"bottom":[null,"",""],"left":[null,"",""],"unit":"px"}],"htmlTag":"p","fontSize":["","md",""]} -->
+<p class="kt-adv-heading207_1780ac-e7 wp-block-kadence-advancedheading" data-kb-block="kb-adv-heading207_1780ac-e7"></p>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/rowlayout {"uniqueID":"207_570d60-c0","columns":4,"tabletRowGutter":"wider","customRowGutter":["",60,""],"colLayout":"two-grid","kbVersion":2} -->
+<!-- wp:kadence/column {"borderWidth":["","","",""],"uniqueID":"207_6ff252-fd","borderStyle":[{"top":["","",""],"right":["","",""],"bottom":["","",""],"left":["","",""],"unit":"px"}]} -->
+<div class="wp-block-kadence-column kadence-column207_6ff252-fd"><div class="kt-inside-inner-col"><!-- wp:kadence/advancedheading {"uniqueID":"207_1af6e6-9a","markBorder":"","markBorderStyles":[{"top":[null,"",""],"right":[null,"",""],"bottom":[null,"",""],"left":[null,"",""],"unit":"px"}],"tabletMarkBorderStyles":[{"top":[null,"",""],"right":[null,"",""],"bottom":[null,"",""],"left":[null,"",""],"unit":"px"}],"mobileMarkBorderStyles":[{"top":[null,"",""],"right":[null,"",""],"bottom":[null,"",""],"left":[null,"",""],"unit":"px"}],"fontSize":["md","",""]} -->
+<h2 class="kt-adv-heading207_1af6e6-9a wp-block-kadence-advancedheading" data-kb-block="kb-adv-heading207_1af6e6-9a">Add a short title</h2>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/advancedheading {"uniqueID":"207_a9b471-94","margin":["md","","",""],"markBorder":"","markBorderStyles":[{"top":[null,"",""],"right":[null,"",""],"bottom":[null,"",""],"left":[null,"",""],"unit":"px"}],"tabletMarkBorderStyles":[{"top":[null,"",""],"right":[null,"",""],"bottom":[null,"",""],"left":[null,"",""],"unit":"px"}],"mobileMarkBorderStyles":[{"top":[null,"",""],"right":[null,"",""],"bottom":[null,"",""],"left":[null,"",""],"unit":"px"}],"htmlTag":"p"} -->
+<p class="kt-adv-heading207_a9b471-94 wp-block-kadence-advancedheading" data-kb-block="kb-adv-heading207_a9b471-94">Use this space to add a short description.</p>
+<!-- /wp:kadence/advancedheading --></div></div>
+<!-- /wp:kadence/column -->
+
+<!-- wp:kadence/column {"borderWidth":["","","",""],"uniqueID":"207_974100-f3","borderStyle":[{"top":["","",""],"right":["","",""],"bottom":["","",""],"left":["","",""],"unit":"px"}]} -->
+<div class="wp-block-kadence-column kadence-column207_974100-f3"><div class="kt-inside-inner-col"><!-- wp:kadence/advancedheading {"uniqueID":"207_0041f1-8c","markBorder":"","markBorderStyles":[{"top":[null,"",""],"right":[null,"",""],"bottom":[null,"",""],"left":[null,"",""],"unit":"px"}],"tabletMarkBorderStyles":[{"top":[null,"",""],"right":[null,"",""],"bottom":[null,"",""],"left":[null,"",""],"unit":"px"}],"mobileMarkBorderStyles":[{"top":[null,"",""],"right":[null,"",""],"bottom":[null,"",""],"left":[null,"",""],"unit":"px"}],"fontSize":["md","",""]} -->
+<h2 class="kt-adv-heading207_0041f1-8c wp-block-kadence-advancedheading" data-kb-block="kb-adv-heading207_0041f1-8c">Add a short title</h2>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/advancedheading {"uniqueID":"207_fff5fd-77","margin":["md","","",""],"markBorder":"","markBorderStyles":[{"top":[null,"",""],"right":[null,"",""],"bottom":[null,"",""],"left":[null,"",""],"unit":"px"}],"tabletMarkBorderStyles":[{"top":[null,"",""],"right":[null,"",""],"bottom":[null,"",""],"left":[null,"",""],"unit":"px"}],"mobileMarkBorderStyles":[{"top":[null,"",""],"right":[null,"",""],"bottom":[null,"",""],"left":[null,"",""],"unit":"px"}],"htmlTag":"p"} -->
+<p class="kt-adv-heading207_fff5fd-77 wp-block-kadence-advancedheading" data-kb-block="kb-adv-heading207_fff5fd-77">Use this space to add a short description.</p>
+<!-- /wp:kadence/advancedheading --></div></div>
+<!-- /wp:kadence/column -->
+
+<!-- wp:kadence/column {"borderWidth":["","","",""],"uniqueID":"207_1c983f-be","borderStyle":[{"top":["","",""],"right":["","",""],"bottom":["","",""],"left":["","",""],"unit":"px"}]} -->
+<div class="wp-block-kadence-column kadence-column207_1c983f-be"><div class="kt-inside-inner-col"><!-- wp:kadence/advancedheading {"uniqueID":"207_8370e3-9e","markBorder":"","markBorderStyles":[{"top":[null,"",""],"right":[null,"",""],"bottom":[null,"",""],"left":[null,"",""],"unit":"px"}],"tabletMarkBorderStyles":[{"top":[null,"",""],"right":[null,"",""],"bottom":[null,"",""],"left":[null,"",""],"unit":"px"}],"mobileMarkBorderStyles":[{"top":[null,"",""],"right":[null,"",""],"bottom":[null,"",""],"left":[null,"",""],"unit":"px"}],"fontSize":["md","",""]} -->
+<h2 class="kt-adv-heading207_8370e3-9e wp-block-kadence-advancedheading" data-kb-block="kb-adv-heading207_8370e3-9e">Add a short title</h2>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/advancedheading {"uniqueID":"207_275393-bf","margin":["md","","",""],"markBorder":"","markBorderStyles":[{"top":[null,"",""],"right":[null,"",""],"bottom":[null,"",""],"left":[null,"",""],"unit":"px"}],"tabletMarkBorderStyles":[{"top":[null,"",""],"right":[null,"",""],"bottom":[null,"",""],"left":[null,"",""],"unit":"px"}],"mobileMarkBorderStyles":[{"top":[null,"",""],"right":[null,"",""],"bottom":[null,"",""],"left":[null,"",""],"unit":"px"}],"htmlTag":"p"} -->
+<p class="kt-adv-heading207_275393-bf wp-block-kadence-advancedheading" data-kb-block="kb-adv-heading207_275393-bf">Use this space to add a short description.</p>
+<!-- /wp:kadence/advancedheading --></div></div>
+<!-- /wp:kadence/column -->
+
+<!-- wp:kadence/column {"borderWidth":["","","",""],"uniqueID":"207_63ff21-51","borderStyle":[{"top":["","",""],"right":["","",""],"bottom":["","",""],"left":["","",""],"unit":"px"}]} -->
+<div class="wp-block-kadence-column kadence-column207_63ff21-51"><div class="kt-inside-inner-col"><!-- wp:kadence/advancedheading {"uniqueID":"207_52dab3-52","markBorder":"","markBorderStyles":[{"top":[null,"",""],"right":[null,"",""],"bottom":[null,"",""],"left":[null,"",""],"unit":"px"}],"tabletMarkBorderStyles":[{"top":[null,"",""],"right":[null,"",""],"bottom":[null,"",""],"left":[null,"",""],"unit":"px"}],"mobileMarkBorderStyles":[{"top":[null,"",""],"right":[null,"",""],"bottom":[null,"",""],"left":[null,"",""],"unit":"px"}],"fontSize":["md","",""]} -->
+<h2 class="kt-adv-heading207_52dab3-52 wp-block-kadence-advancedheading" data-kb-block="kb-adv-heading207_52dab3-52">Add a short title</h2>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/advancedheading {"uniqueID":"207_00e810-1e","margin":["md","","",""],"markBorder":"","markBorderStyles":[{"top":[null,"",""],"right":[null,"",""],"bottom":[null,"",""],"left":[null,"",""],"unit":"px"}],"tabletMarkBorderStyles":[{"top":[null,"",""],"right":[null,"",""],"bottom":[null,"",""],"left":[null,"",""],"unit":"px"}],"mobileMarkBorderStyles":[{"top":[null,"",""],"right":[null,"",""],"bottom":[null,"",""],"left":[null,"",""],"unit":"px"}],"htmlTag":"p"} -->
+<p class="kt-adv-heading207_00e810-1e wp-block-kadence-advancedheading" data-kb-block="kb-adv-heading207_00e810-1e">Use this space to add a short description.</p>
+<!-- /wp:kadence/advancedheading --></div></div>
+<!-- /wp:kadence/column -->
+<!-- /wp:kadence/rowlayout --></div></div>
+<!-- /wp:kadence/column -->
+<!-- /wp:kadence/rowlayout -->
