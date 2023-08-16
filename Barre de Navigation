@@ -34,7 +34,7 @@
     justify-content: center; /* Centrer horizontalement le contenu du menu */
     flex-grow: 1; /* Permettre au menu de prendre l'espace restant */
     width: 100%; /* Utiliser toute la largeur disponible */
-    margin-top: 30px; /* Ajouter une marge en haut pour descendre le menu */
+    margin-top: 25px; /* Ajouter une marge en haut pour descendre le menu */
   }
 
   .nav-menu {
@@ -49,16 +49,17 @@
   .nav-link {
     color: #fff;
     text-decoration: none;
-    font-size: 18px; /* Augmenter la taille de la police */
+    font-size: 16px; /* Augmenter la taille de la police */
     letter-spacing: 2px; /* Espacement entre les lettres */
   }
 
   .logo {
-    max-width: 60px; /* Réduire la largeur maximale du logo */
+    max-width: 50px; /* Réduire la largeur maximale du logo */
     height: auto;
     padding: 0;
     margin: 30px 0 0; /* Déplacer le logo de 30 pixels vers le bas */
     border: none;
+    margin-left: 8px;
   }
 </style>
 </head>
