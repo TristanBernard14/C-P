@@ -5,62 +5,100 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Barre de Navigation avec Logo</title>
 <style>
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-  }
+body {
+   margin: 0;
+   padding: 0;
+   font-family: Arial, sans-serif;
+}
 
-  .nav-menu li {
-    margin: 0 15px; /* Espacement entre les éléments du menu */
-  }
+.custom-navbar {
+   background-color: #333; /* Changement de couleur pour un look plus moderne */
+   color: #fff; /* Couleur du texte */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 10px 0;
+   width: 100%;
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index: 1000;
+}
 
-  .custom-navbar {
-    background-color: #c1e1c1;
-    color: #333;
-    display: flex;
-    justify-content: center; /* Centrer horizontalement */
-    align-items: center; /* Aligner verticalement le contenu au centre */
-    padding: 10px 0; /* Réduire les paddings de la barre de navigation */
-    width: 100%; /* Occuper toute la largeur de la page */
-    position: fixed; /* Fixer la barre en haut de la page */
-    top: 0; /* Placer la barre en haut de la page */
-    left: 0; /* Aligner la barre à gauche */
-  }
+.nav-container {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-grow: 1;
+   width: 100%;
+   margin-top: 25px;
+}
 
-  .nav-container {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Centrer horizontalement le contenu du menu */
-    flex-grow: 1; /* Permettre au menu de prendre l'espace restant */
-    width: 100%; /* Utiliser toute la largeur disponible */
-    margin-top: 25px; /* Ajouter une marge en haut pour descendre le menu */
-  }
+.nav-menu {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
 
-  .nav-menu {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Centrer horizontalement les éléments du menu */
-  }
+.nav-menu li {
+   margin: 0 20px; /* Espacement entre les éléments du menu */
+   position: relative;
+}
 
-  .nav-link {
-    color: #fff;
-    text-decoration: none;
-    font-size: 16px; /* Augmenter la taille de la police */
-    letter-spacing: 2px; /* Espacement entre les lettres */
-  }
+.nav-item:hover .sub-menu {
+   display: block;
+}
 
-  .logo {
-    max-width: 50px; /* Réduire la largeur maximale du logo */
-    height: auto;
-    padding: 0;
-    margin: 30px 0 0; /* Déplacer le logo de 30 pixels vers le bas */
-    border: none;
-    margin-left: 8px;
-  }
+.nav-link {
+   color: #fff;
+   text-decoration: none;
+   font-size: 16px;
+   letter-spacing: 1px;
+   transition: color 0.3s; /* Transition de couleur pour un effet moderne */
+}
+
+.nav-link:hover {
+   color: #c1e1c1; /* Changement de couleur au survol */
+}
+
+.logo {
+   max-width: 50px;
+   height: auto;
+   padding: 0;
+   margin: 30px 0 0;
+   border: none;
+   margin-left: 8px;
+}
+
+.sub-menu {
+   display: none;
+   position: absolute;
+   background-color: #fff; /* Fond du sous-menu */
+   list-style: none;
+   padding: 10px;
+   z-index: 1000;
+   width: 200px; /* Largeur du sous-menu */
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ombre pour un effet moderne */
+}
+
+.sub-menu li {
+   padding: 8px 0;
+}
+
+.sub-menu a {
+   color: #333;
+   text-decoration: none;
+   font-size: 14px;
+   display: block;
+   transition: color 0.3s;
+}
+
+.sub-menu a:hover {
+   color: #c1e1c1;
+}
 </style>
 </head>
 <body>
@@ -71,12 +109,17 @@
     </figure>
   </div>
 
-  <div class="nav-container"> <!-- Conteneur pour le menu -->
+  <div class="nav-container">
     <ul class="nav-menu">
-      <li><a class="nav-link" href="#">Accueil</a></li>
-      <li><a class="nav-link" href="#">Services</a></li>
-      <li><a class="nav-link" href="#">Produits</a></li>
-      <li><a class="nav-link" href="#">Contact</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Accueil</a>
+        <ul class="sub-menu">
+          <li><a href="#">Sous-élément 1</a></li>
+          <li><a href="#">Sous-élément 2</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Produits</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
     </ul>
   </div>
 </nav>
