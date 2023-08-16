@@ -54,7 +54,7 @@ body {
 }
 
 .nav-link {
-   color: #fff;
+   color: #000;
    text-decoration: none;
    font-size: 16px;
    letter-spacing: 1px;
@@ -62,7 +62,7 @@ body {
 }
 
 .nav-link:hover {
-   color: #000; /* Changement de couleur au survol */
+   color: #fff; /* Changement de couleur au survol */
 }
 
 .logo {
@@ -81,8 +81,10 @@ body {
    list-style: none;
    padding: 10px;
    z-index: 1000;
-   width: 200px; /* Largeur du sous-menu */
+   width: 300px;
    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ombre pour un effet moderne */
+   border: 2px solid #000; /* Bordure légère */
+   border-radius: 5px; /* Coins arrondis */
 }
 
 .sub-menu li {
@@ -95,18 +97,22 @@ body {
    font-size: 14px;
    display: block;
    transition: color 0.3s;
+   padding: 8px 12px;
 }
 
 .sub-menu a:hover {
    color: #c1e1c1;
+   background-color: #f7f7f7; /* Couleur de fond au survol */
 }
+
 .message-icon {
   font-size: 18px; /* Taille de l'icône */
+  margin-top: 17px;
   margin-right: 30px; /* Espacement à droite */
-  color: #fff;
+  color: #000;
 }
 .message-icon:hover {
-   color: #000; /* Changement de couleur au survol */
+   color: #fff; /* Changement de couleur au survol */
 }
 </style>
 </head>
@@ -118,21 +124,62 @@ body {
     </figure>
   </div>
 
-    <div class="nav-container">
+  <div class="nav-container">
     <ul class="nav-menu">
       <li class="nav-item"><a class="nav-link" href="http://LaFeuille.local/main-page">Accueil</a>
       </li>
-      <li class="nav-item"><a class="nav-link" href="#">Beauté & Cosmétique</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Mode</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Nourriture & Boissons</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Technologie</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Finance & Assurance</a></li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Beauté & Cosmétique</a>
+        <ul class="sub-menu">
+          <li><a href="#">Entreprises et Marques</a></li>
+          <li><a href="#">Produits</a></li>
+          <li><a href="#">Actualité du Secteur</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Mode</a>
+        <ul class="sub-menu">
+          <li><a href="#">Entreprises et Marques</a></li>
+          <li><a href="#">Produits</a></li>
+          <li><a href="#">Actualité du Secteur</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Agro-Alimentaire</a>
+        <ul class="sub-menu">
+          <li><a href="#">Entreprises et Marques</a></li>
+          <li><a href="#">Produits</a></li>
+          <li><a href="#">Actualité du Secteur</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Technologie</a>
+        <ul class="sub-menu">
+          <li><a href="#">Entreprises et Marques</a></li>
+          <li><a href="#">Produits</a></li>
+          <li><a href="#">Actualité Tech</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Finance & Assurance</a>
+        <ul class="sub-menu">
+          <li><a href="#">Solutions d'Investissement Responsables</a></li>
+          <li><a href="#">Actualités Finance Durable</a></li>
+        </ul>
+      </li>
     </ul>
-   </div>
+  </div>
 
-  <div class="logo">
-    <i class="fas fa-envelope message-icon"></i> <!-- Icône de messagerie -->
+  <div class="message-icon">
+    <a href="http://LaFeuille.local/contact">
+      <i class="fas fa-envelope message-icon"></i> <!-- Icône de messagerie -->
+    </a>
   </div>
 </nav>
 </body>
 </html>
+
+
+
+
+
