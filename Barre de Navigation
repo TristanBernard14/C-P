@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barre de Navigation avec Logo</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .nav-menu li {
+    margin: 0 10px; /* Réduire les marges autour des éléments de la barre de navigation */
+  }
+
+  .custom-navbar {
+    background-color: #c1e1c1;
+    color: #333;
+    display: flex;
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Aligner verticalement le contenu au centre */
+    padding: 5px 10px; /* Réduire les paddings de la barre de navigation */
+    height: 60px; /* Définir une hauteur plus fine */
+  }
+
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centrer horizontalement le contenu du menu */
+    flex-grow: 1; /* Permettre au menu de prendre l'espace restant */
+  }
+
+  .nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centrer horizontalement les éléments du menu */
+  }
+
+  .nav-link {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .logo {
+    max-width: 60px; /* Réduire la largeur maximale du logo */
+    height: auto;
+    padding: 0;
+    margin: 30px 0 0; /* Déplacer le logo de 30 pixels vers le bas */
+    border: none;
+  }
+</style>
+</head>
+<body>
+<nav class="custom-navbar">
+  <div class="logo">
+    <figure class="wp-block-image size-full">
+      <img src="http://LaFeuille.local/wp-content/uploads/2023/08/Logo_blanc_rapro_transpa.png" alt="" class="wp-image-433" />
+    </figure>
+  </div>
+
+  <div class="nav-container"> <!-- Conteneur pour le menu -->
+    <ul class="nav-menu">
+      <li><a class="nav-link" href="#">Accueil</a></li>
+      <li><a class="nav-link" href="#">Services</a></li>
+      <li><a class="nav-link" href="#">Produits</a></li>
+      <li><a class="nav-link" href="#">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+</body>
+</html>
