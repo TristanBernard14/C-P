@@ -1,0 +1,175 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Jul 28 10:13:31 2023
+
+@author: tiber
+"""
+
+import pyautogui
+import time
+from selenium import webdriver
+import pyperclip
+pyautogui.FAILSAFE = False
+import pandas as pd
+        
+A=350
+B=830    
+C=1230
+Y=750
+
+BaisserX=800
+BaisserY=180
+
+infoX=744
+infoY=322
+
+closeX= 1291
+closeY= 169
+
+x_start, y_start = 888, 800
+x_end, y_end = 152, 204
+
+x_start2, y_start2 = 550, 354
+x_end2, y_end2 = 821, 510
+
+Delta=260
+
+Chemin_description = "/Users/tiber/Documents/Loreal_description.docx"
+#CloseX=
+#CloseY=
+def clic_a_la_position(x, y):
+   pyautogui.click(x, y)
+
+
+def move_mouse_to_position(x, y):
+    time.sleep(1)  # Add a 1-second delay
+    pyautogui.moveTo(x, y)
+
+def select_and_copy(x_start, y_start, x_end, y_end):
+    # Déplacer la souris au point de départ et cliquer
+    pyautogui.moveTo(x_start, y_start)
+    pyautogui.mouseDown()
+
+    # Attendre un court instant pour simuler le maintien du clic
+    time.sleep(0.5)
+
+    # Déplacer la souris au point d'arrivée tout en maintenant le clic
+    pyautogui.moveTo(x_end, y_end)
+
+    # Attendre à nouveau pour que la sélection soit stable
+    time.sleep(0.5)
+
+    # Relâcher le clic de la souris
+    pyautogui.mouseUp()
+
+    # Sélectionner la zone en utilisant les touches Command + C (ou Ctrl + C sur Windows)
+    pyautogui.hotkey("command", "c")
+
+    # Attendre un court instant pour s'assurer que la copie est effectuée
+    time.sleep(0.5)
+
+    # Récupérer le contenu copié dans le presse-papiers
+    selected_text = pyperclip.paste()
+
+    return selected_text
+
+def extract_startup_info(text):
+    info_list = []
+    lines = text.split('\n')
+
+    # Extract the company name
+    company_name = lines[0].strip()
+    info_list.append(('Nom de l\'entreprise', company_name))
+
+    for i, line in enumerate(lines):
+        if "Tranche d'effectif" in line:
+            effectif = lines[i + 1].strip()
+            info_list.append(('Tranche d\'effectif', effectif))
+        elif "Année de création" in line:
+            annee_creation = lines[i + 1].strip()
+            info_list.append(('Année de création', annee_creation))
+        elif "Tranche de CA" in line:
+            ca = lines[i + 1].strip()
+            info_list.append(('Tranche de CA (€)', ca))
+        elif "Code postal" in line:
+            code_postal = lines[i + 1].strip()
+            info_list.append(('Code postal', code_postal))
+        elif "Filières" in line:
+            filieres = lines[i + 1].strip()
+            info_list.append(('Filières', filieres))
+        elif "Anciens diplômés" in line:
+            anciens_diplomes = lines[i + 1].strip()
+            info_list.append(('Anciens diplômés', anciens_diplomes))
+        elif "Partenariat(s) laboratoire(s)" in line:
+            etablissement_principal = lines[i + 1].strip()
+            info_list.append(('Etablissement principal', etablissement_principal))
+        elif "Groupe / Organisme de rattachement" in line:
+            organisme_rattachement = lines[i + 1].strip()
+            info_list.append(('Groupe / Organisme de rattachement', organisme_rattachement))
+        elif "Brevet / Droit d'auteur" in line:
+            brevet_droit_auteur = lines[i + 1].strip()
+            info_list.append(('Brevet / Droit d\'auteur', brevet_droit_auteur))
+
+    return dict(info_list)
+
+text = "Ewai\n\nDéveloppement d’un système pour le secteur HORECA. Ce système permet aux clients de réserver, de passer com...\nAFFICHER PLUS\nContact(s) de la startup\nMilan GROS COLAS\nTranche d'effectif\n0 – 9\nAnnée de création\n2022\nTranche de CA (€)\n< 100 000\nAdresse\n4965 Route DEPARTEMENTAL 10 La Grande Terre\nVille\nSAINT-MARC-JAUMEGARDE\nCode postal\n13100\nPays\nFrance\nDernières actualités\nAucune donnée à afficher\nid: 1205013\n0\n14\nIdentifiée\nEcosystème de la startup\nGénéral\nPlus d'infos\nInvestissement\nLieu(x) d'innovation associé(s)\nNon renseigné\nFilières\nAlimentation / Agro\nAnciens diplômés\nUniversité Paris-Saclay\nPartenariat(s) laboratoire(s)\nNon / No\nSi oui, précisez l’objet du partenariat\nNon renseigné\nEtes-vous membre de la French Tech Paris-Saclay ?\nOui / Yes\nPièce(s) jointe(s)"
+startup_info = extract_startup_info(text)
+
+# Create DataFrame from the dictionary and transpose it
+df = pd.DataFrame([startup_info]).T
+
+# Rename the columns
+df.columns = ["Information"]
+
+# Display the DataFrame
+print(df)
+
+
+
+# Execution
+ma_liste = []
+scroll_distance = 260
+A=350
+B=830    
+C=1230
+# Indicate the path to the ChromeDriver executable
+chrome_driver_path = 'path/to/your/chromedriver'
+j=0
+# Initialize the Chrome browser with options
+driver = webdriver.Chrome()
+
+driver.get("https://premium.paris-saclay-startup.com/page/startups")
+pyautogui.sleep(70)
+print("OK")
+pyautogui.sleep(10)
+for i in range(0,220):
+    if i != 0: 
+        time.sleep(2)
+        driver.execute_script(f"window.scrollBy(0, {scroll_distance});")
+    for pos in [350, 750, 1150]:
+        j=j+1
+        clic_a_la_position(pos, Y)
+        time.sleep(15)
+        selected_text = select_and_copy(x_start, y_start, x_end, y_end)
+        time.sleep(5)
+        clic_a_la_position(infoX, infoY)
+        time.sleep(2)
+        clic_a_la_position(infoX, infoY)
+        time.sleep(2)
+        selected_text2 = select_and_copy(x_start2, y_start2, x_end2, y_end2)
+        time.sleep(2)
+        clic_a_la_position(closeX, closeY)
+        time.sleep(2)
+        info = extract_startup_info(selected_text+ '\n' + selected_text2)
+        ma_liste.append(info)
+        time.sleep(2)
+        clic_a_la_position(609,Y)
+        time.sleep(2)
+
+
+# Boucle infinie pour afficher en continu la position de la souris
+while True:
+    x, y = pyautogui.position()
+    print(f"Position de la souris : x = {x}, y = {y}")
+
