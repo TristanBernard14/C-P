@@ -1,115 +1,138 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-        <style>
-        /* Styles spécifiques à la section de recherche personnalisée */
-        #custom-search-section #searchbar {
-            padding: 10px;
-            border: none;
-            border-bottom: 2px solid #555;
-            width: 100%;
-            font-size: 16px;
-            background-color: transparent;
-            color: #333;
-            transition: border-bottom-color 0.3s ease-in-out;
-            margin-bottom: 20px;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barre de Navigation avec Logo</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<style>
+body {
+   margin: 0;
+   padding: 0;
+   font-family: Arial, sans-serif;
+}
 
-        #custom-search-section #searchbar::placeholder {
-            color: #999;
-        }
+.custom-navbar {
+   background-color: #c1e1c1;
+   color: #333;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 10px 0;
+   width: 100%;
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index: 1000;
+}
 
-        /* Styles pour la liste d'éléments filtrés */
-        #custom-search-section ul {
-            list-style: none;
-            padding: 0;
-        }
+.nav-container {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-grow: 1;
+   width: 100%;
+   margin-top: 25px;
+}
 
-        #custom-search-section li {
-            display: none;
-            margin-bottom: 10px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            background-color: #f5f5f5;
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.2s ease-in-out;
-            position: relative;
-        }
+.nav-menu {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
 
-        #custom-search-section li.active {
-            display: block;
-            background-color: white;
-            color: black;
-            border-color: #ccc;
-        }
-        
-        #custom-search-section li a {
-            text-decoration: none;
-            color: black;
-            font-weight: bold;
-        }
+.nav-menu li {
+   margin: 0 20px; /* Espacement entre les éléments du menu */
+   position: relative;
+}
 
-        #custom-search-section li a:hover,
-        #custom-search-section li a:visited {
-            background-color: #f5f5f5; /* Retirer le surlignement */
-        }
+.nav-item:hover .sub-menu {
+   display: block;
+}
 
-        #custom-search-section .label {
-            display: inline-block;
-            padding: 4px 8px;
-            background-color: rgba(0, 0, 0, 0.1);
-            font-size: 12px;
-            border-radius: 4px;
-            margin-right: 8px;
-        }
-    </style>
-    <script>
-        function search_items() {
-            let input = document.getElementById('searchbar').value;
-            input = input.toLowerCase();
-            let x = document.getElementsByClassName('entreprise');
-    
-            let count = 0; // Compteur pour le nombre d'éléments affichés
-    
-            if (input === '') {
-                for (let i = 0; i < x.length; i++) {
-                    x[i].classList.remove('active');
-                }
-            } else {
-                for (let i = 0; i < x.length; i++) {
-                    if (count >= 4) { // Limite le nombre d'éléments affichés à 5
-                        x[i].classList.remove('active');
-                    } else {
-                        if (!x[i].textContent.toLowerCase().includes(input)) {
-                            x[i].classList.remove('active');
-                        } else {
-                            x[i].classList.add('active');
-                            count++;
-                        }
-                    }
-                }
-            }
+.nav-link {
+   color: #fff;
+   text-decoration: none;
+   font-size: 16px;
+   letter-spacing: 1px;
+   transition: color 0.3s; /* Transition de couleur pour un effet moderne */
+}
 
-            // Mettre à jour le contenu du span avec l'apostrophe
-            let lorealText = document.getElementById('lorealText');
-            lorealText.textContent = "L'Oréal";
-        }
-    </script>
+.nav-link:hover {
+   color: #000; /* Changement de couleur au survol */
+}
+
+.logo {
+   max-width: 50px;
+   height: auto;
+   padding: 0;
+   margin: 30px 0 0;
+   border: none;
+   margin-left: 8px;
+}
+
+.sub-menu {
+   display: none;
+   position: absolute;
+   background-color: #fff; /* Fond du sous-menu */
+   list-style: none;
+   padding: 10px;
+   z-index: 1000;
+   width: 200px; /* Largeur du sous-menu */
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ombre pour un effet moderne */
+}
+
+.sub-menu li {
+   padding: 8px 0;
+}
+
+.sub-menu a {
+   color: #333;
+   text-decoration: none;
+   font-size: 14px;
+   display: block;
+   transition: color 0.3s;
+}
+
+.sub-menu a:hover {
+   color: #c1e1c1;
+}
+.message-icon {
+  font-size: 18px; /* Taille de l'icône */
+  margin-right: 30px; /* Espacement à droite */
+  color: #fff;
+}
+.message-icon:hover {
+   color: #000; /* Changement de couleur au survol */
+}
+</style>
 </head>
 <body>
-    <!-- Section de recherche personnalisée -->
-    <div id="custom-search-section">
-        <input type="text" id="searchbar" onkeyup="search_items()" placeholder="Rechercher une Entreprise ou une Marque...">
-           <ul id="resultList">
-            <a href="http://LaFeuille.local/loreal)">
-                <li class="entreprise">
-                    <span class="label">Entreprise</span>
-                    L'Oréal
-                </li>
-            </a>
-            <!-- Ajoutez d'autres éléments de liste ici si nécessaire -->
-        </ul>
-    </div>
+<nav class="custom-navbar">
+  <div class="logo">
+    <figure class="wp-block-image size-full">
+      <img src="http://LaFeuille.local/wp-content/uploads/2023/08/Logo_blanc_rapro_transpa.png" alt="" class="wp-image-433" />
+    </figure>
+  </div>
+
+    <div class="nav-container">
+    <ul class="nav-menu">
+      <li class="nav-item"><a class="nav-link" href="http://LaFeuille.local/main-page">Accueil</a>
+      </li>
+      <li class="nav-item"><a class="nav-link" href="#">Beauté & Cosmétique</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Mode</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Nourriture & Boissons</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Technologie</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Finance & Assurance</a></li>
+    </ul>
+   </div>
+
+  <div class="logo">
+    <i class="fas fa-envelope message-icon"></i> <!-- Icône de messagerie -->
+  </div>
+</nav>
 </body>
 </html>
