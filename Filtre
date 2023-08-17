@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page avec Menu Filtrant Moderne</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            background-color: #fff;
+        }
+        #sidebar-wrapper {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc; /* Ajout de la bordure autour du bloc de filtres */
+            border-radius: 5px; /* Coins arrondis */
+            background-color: #fff; /* Couleur de fond */
+            box-shadow: -5px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        #sidebar {
+            color: #333;
+        }
+        #content {
+            flex: 1;
+            padding: 20px;
+            background-color: white;
+        }
+        h1 {
+            margin-top: 0;
+            color: #333;
+        }
+        .filter-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        select, input[type="range"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            margin-bottom: 10px;
+        }
+        .search-results {
+            display: flex;
+            flex-direction: column;
+        }
+        .result-item {
+            margin-bottom: 20px;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="sidebar-wrapper">
+        <h1>Filtres</h1>
+        <div id="sidebar">
+            <div class="filter-group">
+                <label for="category">Secteur:</label>
+                <select id="category">
+                    <option value="option1">Beauté & Cosmétique</option>
+                    <option value="option2">Nourriture et Boissons</option>
+                    <option value="option3">Technologie</option>
+                    <option value="option4">Mode</option>
+                </select>
+            </div>
+            <div class="filter-group" id="product-filters" style="display: none;">
+                <label for="products">Produits:</label>
+                <select id="products">
+                    <!-- Options de produits ici -->
+                </select>
+            </div>
+            <div id="beauty-filter" class="filter-group" style="display: none;">
+                <label>Sous-catégories:</label>
+                <label><input type="checkbox" value="option1"> Parfums</label>
+                <label><input type="checkbox" value="option2"> Maquillage</label>
+                <label><input type="checkbox" value="option3"> Soins de la peau</label>
+            </div>
+            <div class="filter-group">
+                <label for="price">Prix:</label>
+                <input type="range" id="price" min="0" max="100" step="10">
+            </div>
+            <div class="filter-group">
+                <label for="rating">Note:</label>
+                <input type="range" id="rating" min="0" max="5" step="0.5">
+            </div>
+        </div>
+    </div>
+    <div id="content">
+        <!-- Contenu de la page ici -->
+    </div>
+    <script>
+        const categorySelect = document.getElementById("category");
+        const beautyFilter = document.getElementById("beauty-filter");
+        const productFilters = document.getElementById("product-filters");
+
+        function toggleBeautyFilter() {
+            if (categorySelect.value === "option1") {
+                beautyFilter.style.display = "flex";
+                productFilters.style.display = "flex";
+            } else {
+                beautyFilter.style.display = "none";
+                productFilters.style.display = "none";
+            }
+        }
+
+        categorySelect.addEventListener("change", toggleBeautyFilter);
+        toggleBeautyFilter(); // Appeler la fonction au chargement initial
+    </script>
+</body>
+</html>
