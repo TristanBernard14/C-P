@@ -70,12 +70,6 @@
                     <option value="option4">Mode</option>
                 </select>
             </div>
-            <div class="filter-group" id="product-filters" style="display: none;">
-                <label for="products">Produits:</label>
-                <select id="products">
-                    <!-- Options de produits ici -->
-                </select>
-            </div>
             <div id="beauty-filter" class="filter-group" style="display: none;">
                 <label>Sous-catégories:</label>
                 <label><input type="checkbox" value="option1"> Parfums</label>
@@ -98,20 +92,14 @@
     <script>
         const categorySelect = document.getElementById("category");
         const beautyFilter = document.getElementById("beauty-filter");
-        const productFilters = document.getElementById("product-filters");
 
-        function toggleBeautyFilter() {
+        categorySelect.addEventListener("change", function () {
             if (categorySelect.value === "option1") {
                 beautyFilter.style.display = "flex";
-                productFilters.style.display = "flex";
             } else {
                 beautyFilter.style.display = "none";
-                productFilters.style.display = "none";
             }
-        }
-
-        categorySelect.addEventListener("change", toggleBeautyFilter);
-        toggleBeautyFilter(); // Appeler la fonction au chargement initial
+        });
     </script>
 </body>
 </html>
